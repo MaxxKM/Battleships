@@ -20,12 +20,20 @@ def place_ship(board, occupied_positions):
             occupied_positions.append(position)
             return
 
+"""
+place multiple ships on the board
+"""
+def place_ships(board, num_ships):
+    occupied_positions = []
+    for _ in range(num_ships):
+        place_ship(board, occupied_positions)
 
 
+"""
+Gets the name of the player from their input
+"""
 def get_player_name():
-    """
-    Gets the name of the player from their input
-    """
+
     return input("Enter you name: ")
 
 def main():
