@@ -1,3 +1,5 @@
+import random
+
 """
 Creates a 5 x 5 board filled with '.' for empty spaces
 """
@@ -120,12 +122,14 @@ def main():
     player_board = create_board()
     computer_board = create_board()
     
+    print("------------------------------------------------")
     print(f"Welcome, {player_name}! Let's play Battleship!")
     print("The board is 5 x 5 in size")
     print("The numbers of ships are 4 each")
     print("Your ships are marked with '@'")
     print("Hits are marked with 'X' and misses with 'O'")
     print("Have Fun!")
+    print("------------------------------------------------")
     game_loop(player_board, computer_board)
 
 if __name__ == "__main__":
