@@ -89,8 +89,13 @@ def game_loop(player_board, computer_board):
             break
         
         # Computer's turn
-        row = random.randint(0, 4)
-        col = random.randint(0, 4)
+        while True:
+            row = random.randint(0, 4)
+            col = random.randint(0, 4)
+            guess = (row, col)
+            if guess not in computer_guesses:
+                computer_guesses.append(guess)
+                break
         
         if computer_board[row][col] == '@':
             print("Computer hit!")
