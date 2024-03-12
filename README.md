@@ -95,14 +95,14 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 
 ### Help
  - The information, planning and overall knowledge for this project from Code Institute's "Love Sandwiches" Project. specifically..
-  - Setting up the workspace from Love Sandwiches > Getting set up Module
-  - the use of visual planning and function planning in the Love Sandwiches > Adding Sales Data & Calculating Sales Data Modules
-  - The deployment information from Love Sandwiches > Deployment > Deploying our Project Part 1 & 2 
+    - Setting up the workspace from Love Sandwiches > Getting set up Module
+    - the use of visual planning and function planning in the Love Sandwiches > Adding Sales Data & Calculating Sales Data Modules
+    - The deployment information from Love Sandwiches > Deployment > Deploying our Project Part 1 & 2 
  - I gain inspiration specific and knowledge of the many different ways to code for battleships from a few youtube videos. (I didn't really take much of there coding examples into my project, mainly just explored the various ways of doing each functionality of the game so I could come up with my own. They covered a lot of Python I am not familiar with yet so it was mainly a way for me to plan my own structure for Battleships.)
   - [CS Student](https://www.youtube.com/watch?v=MgJBgnsDcF0&ab_channel=CSStudents)
   - [Knowledge Mavens](https://www.youtube.com/watch?v=tF1WRCrd_HQ&t=1495s&ab_channel=KnowledgeMavens)
   - [HBCoding](https://www.youtube.com/watch?v=FkUOjjD5qtM&ab_channel=HBCoding)
-  
+
 ### Acknowledgements
  - The Code Institute tutor support team for help with problems within the code.
  - My mentor for continued help and feedback throughout the project.
