@@ -37,18 +37,26 @@ The player keeps guessing until they hit all the computers ships or vice versa.
  - input for player name.
  - Randomly places ships for player and computer.
  - The computer ships are hidden from the player.
+
  ![image of player name input and both boards](assets/images/input-grid.png)
  - Icons to notify hits and misses as well as text.
+
  ![image of hit and miss icons and text saying player/computer hit/missed](assets/images/hit.png)
  ![image of hit and miss icons and text saying player/computer hit/missed](assets/images/miss.png)
+
  - Invalid inputs
     - Player must enter a number
     - Player must enter a number between 0-4
     - Player must not guess the same spot
+
  ![image of invalid inputs](assets/images/invalid.png)
  ![image of invalid inputs](assets/images/previous-guess.png)
+
 ### Future Features
  - Player and Computer scores to keep track of who is winning.
  - Various grid sizes that the player can choose from.
  - Various ship sizes and shapes
  - Choice of placement for the players ships.
+
+## Testing
+

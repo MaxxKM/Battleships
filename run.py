@@ -3,12 +3,17 @@ import random
 """
 Creates a 5 x 5 board filled with '.' for empty spaces
 """
+
+
 def create_board():
     return [['.' for i in range(5)] for i in range(5)]
+
 
 """
 Places ships at random positions
 """
+
+
 def place_ship(board, occupied_positions):
     while True:
         row = random.randint(0, 4)
@@ -22,25 +27,31 @@ def place_ship(board, occupied_positions):
             occupied_positions.append(position)
             return
 
+
 """
 place multiple ships on the board
 """
+
+
 def place_ships(board, num_ships):
     occupied_positions = []
     for _ in range(num_ships):
         place_ship(board, occupied_positions)
 
+
 """
 Prints the players and computers board for the player to show
 the guesses, hits, misses etc.
 """
+
+
 def print_board(board, is_computer_board=False):
     board_to_print = [row.copy() for row in board]
     if is_computer_board:
         for i in range(len(board_to_print)):
             for j in range(len(board_to_print[i])):
                 if board_to_print[i][j] == '@':
-                    board_to_print[i][j] = '.' # Hide the computers ships, so player cannot see them
+                    board_to_print[i][j] = '.'  # Hide the computers ships
     for row in board_to_print:
         print(' '.join(row))
 
@@ -48,12 +59,13 @@ def print_board(board, is_computer_board=False):
 """
 Main Game Loop
 """
+
+
 def game_loop(player_board, computer_board):
     place_ships(player_board, 4)
     place_ships(computer_board, 4)
 
-    computer_guesses = [] # List to store the computer's guesses
-    
+    computer_guesses = []  # List to store the computer's guesses
     while True:
         print("Player's board:")
         print_board(player_board)
@@ -75,7 +87,6 @@ def game_loop(player_board, computer_board):
             except ValueError:
                 print("Invalid input! Please enter a number.")
                 continue
-        
         if computer_board[row][col] == '@':
             print("You Hit!")
             computer_board[row][col] = 'X'
@@ -89,7 +100,7 @@ def game_loop(player_board, computer_board):
         if '@' not in [cell for row in computer_board for cell in row]:
             print("You win!")
             break
-        
+
         # Computer's turn
         while True:
             row = random.randint(0, 4)
@@ -98,14 +109,14 @@ def game_loop(player_board, computer_board):
             if guess not in computer_guesses:
                 computer_guesses.append(guess)
                 break
-        
+
         if player_board[row][col] == '@':
             print("Computer hit!")
             player_board[row][col] = 'X'
         else:
             print("Computer missed!")
             player_board[row][col] = 'O'
-        
+
         """
         Checks if there is any ships left on players boards. if not
         computer wins.
@@ -114,14 +125,17 @@ def game_loop(player_board, computer_board):
             print("Computer wins!")
             break
 
+
 """
 Main functions for the game and welcome text
 """
+
+
 def main():
     player_name = input("Enter your name: ")
     player_board = create_board()
     computer_board = create_board()
-    
+
     print("------------------------------------------------")
     print(f"Welcome, {player_name}! Let's play Battleship!")
     print("The board is 5 x 5 in size")
@@ -131,6 +145,7 @@ def main():
     print("Have Fun!")
     print("------------------------------------------------")
     game_loop(player_board, computer_board)
+
 
 if __name__ == "__main__":
     main()
