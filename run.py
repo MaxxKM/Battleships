@@ -49,6 +49,8 @@ Main Game Loop
 def game_loop(player_board, computer_board):
     place_ships(player_board, 4)
     place_ships(computer_board, 4)
+
+    computer_guesses = [] # List to store the computer's guesses
     
     while True:
         print("Player's board:")
@@ -57,15 +59,27 @@ def game_loop(player_board, computer_board):
         print_board(computer_board)
 
         # Player's turn
-        row = int(input("Enter the row (0-4): "))
-        col = int(input("Enter the column (0-4): "))
+        while True:
+            try:
+                row = int(input("Enter the row (0-4): "))
+                col = int(input("Enter the column (0-4): "))
+                if row < 0 or row > 4 or col < 0 or col > 4:
+                    print("Invalid input! Please enter a number between 0 and 4.")
+                    continue
+                if computer_board[row][col] in ['X', 'O']:
+                    print("You already guessed this location. Please guess again.")
+                    continue
+                break
+            except ValueError:
+                print("Invalid input! Please enter a number.")
+                continue
         
-        if player_board[row][col] == '@':
-            print("Hit!")
-            player_board[row][col] = 'X'
+        if computer_board[row][col] == '@':
+            print("You Hit!")
+            computer_board[row][col] = 'X'
         else:
-            print("Miss!")
-            player_board[row][col] = 'O'
+            print("You Missed!")
+            computer_board[row][col] = 'O'
         """
         Checks if there is any ships left on computers boards. if not
         player wins.
