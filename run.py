@@ -44,6 +44,42 @@ def print_board(board, is_computer_board=False):
 
 
 """
+Main Game Loop
+"""
+def game_loop(player_board, computer_board):
+    place_ships(player_board, 4)
+    place_ships(computer_board, 4)
+    
+    while True:
+        print("Player's board:")
+        print_board(player_board)
+        print("Computer's board:")
+        print_board(computer_board)
+
+        # Player's turn
+        row = int(input("Enter the row (0-4): "))
+        col = int(input("Enter the column (0-4): "))
+        
+        if player_board[row][col] == '@':
+            print("Hit!")
+            player_board[row][col] = 'X'
+        else:
+            print("Miss!")
+            player_board[row][col] = 'O'
+        
+        # Computer's turn
+        row = random.randint(0, 4)
+        col = random.randint(0, 4)
+        
+        if computer_board[row][col] == '@':
+            print("Computer hit!")
+            computer_board[row][col] = 'X'
+        else:
+            print("Computer miss!")
+            computer_board[row][col] = 'O'
+
+
+"""
 Gets the name of the player from their input
 """
 def get_player_name():
