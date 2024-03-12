@@ -60,3 +60,49 @@ The player keeps guessing until they hit all the computers ships or vice versa.
 
 ## Testing
 
+I have manually tested this project by doing the following:
+ - Passed the code through a PEP8 linter and confirmed there are no problems.
+ - Given incorrect inputs such as, strings when numbers are needed for guessing, out of bounds inputs, previous inputs.
+ - Tested in my local terminal and the Code Institute Heroku terminal
+
+## Bugs
+
+### Solved Bugs
+- The player and computer guesses were going on the wrong boards. easy fix by flipping the boards around.
+- The computer would guess the same locations, struggled a lot with this, but confident I found the solution by adding the occupied_positions functionality to the place_ship function. 
+
+## Remaining Bugs
+- No remaining bugs as far as I can tell.
+
+## Validator Testing
+ - PEP8
+  - No errors returned from pep8ci.herokuapp.com
+
+![image of validation](assets/images/pep.png)
+
+## Deployment
+
+This project was deployed using Code Institute's mock terminal for Heroku.
+
+ - Steps for deployment:
+  - Fork or clone this repository
+  - Create a new Heroku app
+  - Set the buildpacks to 'Python' and 'NodeJS' in that order
+  - Link the Heroku app to the repository
+  - Click on Deploy
+
+## Credits
+
+### Help
+ - The information, planning and overall knowledge for this project from Code Institute's "Love Sandwiches" Project. specifically..
+  - Setting up the workspace from Love Sandwiches > Getting set up Module
+  - the use of visual planning and function planning in the Love Sandwiches > Adding Sales Data & Calculating Sales Data Modules
+  - The deployment information from Love Sandwiches > Deployment > Deploying our Project Part 1 & 2 
+ - I gain inspiration specific and knowledge of the many different ways to code for battleships from a few youtube videos. (I didn't really take much of there coding examples into my project, mainly just explored the various ways of doing each functionality of the game so I could come up with my own. They covered a lot of Python I am not familiar with yet so it was mainly a way for me to plan my own structure for Battleships.)
+  - [CS Student](https://www.youtube.com/watch?v=MgJBgnsDcF0&ab_channel=CSStudents)
+  - [Knowledge Mavens](https://www.youtube.com/watch?v=tF1WRCrd_HQ&t=1495s&ab_channel=KnowledgeMavens)
+  - [HBCoding](https://www.youtube.com/watch?v=FkUOjjD5qtM&ab_channel=HBCoding)
+  
+### Acknowledgements
+ - The Code Institute tutor support team for help with problems within the code.
+ - My mentor for continued help and feedback throughout the project.
