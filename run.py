@@ -66,6 +66,13 @@ def game_loop(player_board, computer_board):
         else:
             print("Miss!")
             player_board[row][col] = 'O'
+        """
+        Checks if there is any ships left on computers boards. if not
+        player wins.
+        """
+        if '@' not in [cell for row in computer_board for cell in row]:
+            print("You win!")
+            break
         
         # Computer's turn
         row = random.randint(0, 4)
@@ -77,6 +84,14 @@ def game_loop(player_board, computer_board):
         else:
             print("Computer miss!")
             computer_board[row][col] = 'O'
+            
+        """
+        Checks if there is any ships left on players boards. if not
+        computer wins.
+        """
+        if '@' not in [cell for row in player_board for cell in row]:
+            print("Computer wins!")
+            break
 
 
 """
