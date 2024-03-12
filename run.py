@@ -78,10 +78,10 @@ def game_loop(player_board, computer_board):
                 row = int(input("Enter the row (0-4): "))
                 col = int(input("Enter the column (0-4): "))
                 if row < 0 or row > 4 or col < 0 or col > 4:
-                    print("Invalid input! Please enter a number between 0 and 4.")
+                    print("Invalid ! Please enter a number between 0 and 4.")
                     continue
                 if computer_board[row][col] in ['X', 'O']:
-                    print("You already guessed this location. Please guess again.")
+                    print("Location guessed already. Please guess again.")
                     continue
                 break
             except ValueError:
