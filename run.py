@@ -56,7 +56,7 @@ def game_loop(player_board, computer_board):
         print("Player's board:")
         print_board(player_board)
         print("Computer's board:")
-        print_board(computer_board)
+        print_board(computer_board, True)
 
         # Player's turn
         while True:
@@ -97,13 +97,13 @@ def game_loop(player_board, computer_board):
                 computer_guesses.append(guess)
                 break
         
-        if computer_board[row][col] == '@':
+        if player_board[row][col] == '@':
             print("Computer hit!")
-            computer_board[row][col] = 'X'
+            player_board[row][col] = 'X'
         else:
-            print("Computer miss!")
-            computer_board[row][col] = 'O'
-            
+            print("Computer missed!")
+            player_board[row][col] = 'O'
+        
         """
         Checks if there is any ships left on players boards. if not
         computer wins.
@@ -112,15 +112,20 @@ def game_loop(player_board, computer_board):
             print("Computer wins!")
             break
 
-
-
+"""
+Main functions for the game and welcome text
+"""
 def main():
     player_name = input("Enter your name: ")
     player_board = create_board()
     computer_board = create_board()
-
-    print(f"Welcome {player_name} to a game of Battleships!")
+    
+    print(f"Welcome, {player_name}! Let's play Battleship!")
     print("The board is 5 x 5 in size")
+    print("The numbers of ships are 4 each")
+    print("Your ships are marked with '@'")
+    print("Hits are marked with 'X' and misses with 'O'")
+    print("Have Fun!")
     game_loop(player_board, computer_board)
 
 if __name__ == "__main__":
