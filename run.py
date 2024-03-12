@@ -94,16 +94,15 @@ def game_loop(player_board, computer_board):
             break
 
 
-"""
-Gets the name of the player from their input
-"""
-def get_player_name():
-
-    return input("Enter you name: ")
 
 def main():
-    player_name = get_player_name()
+    player_name = input("Enter your name: ")
+    player_board = create_board()
+    computer_board = create_board()
+
     print(f"Welcome {player_name} to a game of Battleships!")
     print("The board is 5 x 5 in size")
+    game_loop(player_board, computer_board)
 
-main()
+if __name__ == "__main__":
+    main()
