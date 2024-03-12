@@ -28,6 +28,20 @@ def place_ships(board, num_ships):
     for _ in range(num_ships):
         place_ship(board, occupied_positions)
 
+"""
+Prints the players and computers board for the player to show
+the guesses, hits, misses etc.
+"""
+def print_board(board, is_computer_board=False):
+    board_to_print = [row.copy() for row in board]
+    if is_computer_board:
+        for i in range(len(board_to_print)):
+            for j in range(len(board_to_print[i])):
+                if board_to_print[i][j] == '@':
+                    board_to_print[i][j] = '.' # Hide the computers ships, so player cannot see them
+    for row in board_to_print:
+        print(' '.join(row))
+
 
 """
 Gets the name of the player from their input
